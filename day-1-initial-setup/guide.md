@@ -35,3 +35,5 @@ district
 ```
 
 If you want to replace the default database with a dump, you can replace the db/init.sql file with your own dump.
+
+If you do not have docker installed, you can get it from [here](https://www.docker.com/products/docker-desktop)

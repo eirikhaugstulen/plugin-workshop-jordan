@@ -1,4 +1,6 @@
-This repository contains all material and documentation for the plugin workshop in Amman, Jordan on 15th-20th November 2025.
+This repository contains all material and documentation for the plugin workshop in Amman, Jordan.
+
+The workshop will be held on 15th-20th November 2025.
 
 ## Agenda
 
