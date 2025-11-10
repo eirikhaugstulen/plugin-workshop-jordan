@@ -1,0 +1,37 @@
+This is a guide on how to set up DHIS2 using Docker.
+
+All necessary files are located in the docker-setup directory. You can find the following files:
+
+- docker-compose.yml
+- dhis.conf
+- A database dump (Optional)
+
+To run the DHIS2 instance, you can use the following command:
+
+```bash
+docker compose up -d
+```
+
+To stop the DHIS2 instance, you can use the following command:
+
+```bash
+docker compose down
+```
+
+or just use the stop button in the Docker Desktop app.
+
+
+To access the DHIS2 instance, you can use the following URL:
+
+```
+http://localhost:8080
+```
+
+The default username and password are:
+
+```
+admin
+district
+```
+
+If you want to replace the default database with a dump, you can replace the db/init.sql file with your own dump.
