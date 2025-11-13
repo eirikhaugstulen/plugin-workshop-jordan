@@ -6,3 +6,5 @@ build
 node_modules
 **.sql
 _internal_notes.md
+**/locales/**
+.d2
