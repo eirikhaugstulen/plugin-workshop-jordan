@@ -1,4 +1,12 @@
-This is a guide on how to set up DHIS2 using Docker.
+## Day 1 - Initial setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/eirikhaugstulen/plugin-workshop-jordan.git
+```
+
+### Configure DHIS2 with docker
 
 All necessary files are located in the docker-setup directory. You can find the following files:
 
@@ -30,8 +38,8 @@ http://localhost:8080
 The default username and password are:
 
 ```
-admin
-district
+system
+system123
 ```
 
 If you want to replace the default database with a dump, you can replace the db/init.sql file with your own dump.

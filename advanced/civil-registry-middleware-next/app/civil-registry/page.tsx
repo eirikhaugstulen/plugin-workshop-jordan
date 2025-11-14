@@ -57,7 +57,7 @@ export default function CivilRegistryPage() {
                         href="/"
                         className="font-semibold text-slate-600 hover:text-slate-900"
                     >
-                        ← Back to landing
+                        ← Back to landing page
                     </Link>
                 </div>
                 <h1 className="mb-6 text-3xl font-semibold">
