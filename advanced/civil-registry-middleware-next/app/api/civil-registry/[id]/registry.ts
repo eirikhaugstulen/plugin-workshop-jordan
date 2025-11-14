@@ -1,4 +1,4 @@
-type Registry = {
+export type Registry = {
     uniqueId: string;
     firstName: string;
     lastName: string;
