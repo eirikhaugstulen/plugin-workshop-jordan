@@ -45,3 +45,51 @@ system123
 If you want to replace the default database with a dump, you can replace the db/init.sql file with your own dump.
 
 If you do not have docker installed, you can get it from [here](https://www.docker.com/products/docker-desktop)
+
+
+
+
+## Creating a custom app
+
+1. Try running `npm --version` to check if you have npm installed.
+2. If not, run the following commands: 
+
+# Download and install Chocolatey:
+powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
+
+# Download and install Node.js:
+choco install nodejs --version="22.21.1"
+
+# Verify the Node.js version:
+node -v # Should print "v22.21.1".
+
+# Verify npm version:
+npm -v # Should print "10.9.4".
+
+3. Run `npm create @dhis2/app` to create a new app
+
+
+
+
+### To make your custom app into a plugin
+
+1. Open up the d2.config.js file
+2. Add a new entrypoint like this: 
+```js
+entryPoints: {
+    app: './src/App.tsx',
+    plugin: './src/Plugin.tsx',
+},
+```
+
+3. Create a new Plugin.tsx or Plugin.jsx file
+4. Add the following code to the file:
+```tsx
+
+export default function Plugin() {
+    return <div>Hello World</div>;
+}
+```
+
+5. Restart your local development server by pressing "Ctrl + C" and then running `npm start` again
+

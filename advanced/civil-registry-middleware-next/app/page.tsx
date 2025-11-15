@@ -28,7 +28,7 @@ export default function Home() {
               <ExternalLinkIcon className="w-4 h-4" />
             </div>
           </Link>
-          <Link
+          {/* <Link
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=IsozpdPFJEeBvdsRTjluzgnWW2p0IxdDjvh0b9HCvu9UQjYwVkY0RlpOUVpQRFJWNTdLTFQ3V05DVS4u"
             target="_blank"
             className={`${baseButtonStyles} ${secondaryButtonStyles}`}>
@@ -36,7 +36,7 @@ export default function Home() {
               <p>Pre-training survey</p>
               <ExternalLinkIcon className="w-4 h-4" />
             </div>
-          </Link>
+          </Link> */}
           <Link
             href="https://dev.im.dhis2.org/tracker-plugins"
             target="_blank"
@@ -47,9 +47,19 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="/civil-registry"
+            href="https://developers.dhis2.org/docs/capture-plugins/developer/getting-started"
+            target="_blank"
             className={`${baseButtonStyles} ${secondaryButtonStyles}`}
           >
+            <div className="flex items-center gap-2">
+              <p>Developer documentation</p>
+              <ExternalLinkIcon className="w-4 h-4" />
+            </div>
+          </Link>
+          <Link
+            href="/civil-registry"
+            className={`${baseButtonStyles} ${secondaryButtonStyles}`}
+            >
             <div className="flex items-center gap-2">
               <p>Demo of the civil registry</p>
             </div>
