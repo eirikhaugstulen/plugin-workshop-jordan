@@ -17,8 +17,9 @@ The API is available at `https://www.jordan-workshop.dev/api/civil-registry/${id
 You can use `fetch()` to trigger an API call and get the data.
 
 ```tsx
-const response = await fetch(`https://www.jordan-workshop.dev/api/civil-registry/${id}`);
-const data = await response.json();
+const fetchData = async () => {
+    const response = await fetch(`https://www.jordan-workshop.dev/api/civil-registry/test`); // Replace ${id} with test for now
+    const { data } = await response.json();
 ```
 
 Use console.log to print the data to the console for understanding the data structure.
