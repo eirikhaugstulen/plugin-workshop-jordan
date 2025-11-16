@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-11-13T18:59:02.123Z\n"
-"PO-Revision-Date: 2025-11-13T18:59:02.124Z\n"
+"POT-Creation-Date: 2025-11-16T18:41:41.432Z\n"
+"PO-Revision-Date: 2025-11-16T18:41:41.434Z\n"
 
 msgid "ERROR"
 msgstr "ERROR"
@@ -19,3 +19,6 @@ msgstr "Hello {{name}}"
 
 msgid "Welcome to DHIS2 with TypeScript!"
 msgstr "Welcome to DHIS2 with TypeScript!"
+
+msgid "Hello from Jordan! Welcome all 🎉"
+msgstr "Hello from Jordan! Welcome all 🎉"
