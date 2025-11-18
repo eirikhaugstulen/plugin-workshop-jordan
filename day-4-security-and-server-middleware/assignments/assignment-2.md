@@ -19,5 +19,5 @@ ipconfig | findstr /i "IPv4"
 
 Then run the following command in your terminal:
 ```bash
-curl -v -X POST http://localhost:8080/api/routes -u system:System123 -H "Content-Type: application/json" -d '{"name":"Is under treatment","code":"is-under-treatment","disabled":false,"url":"http://172.25.22.59:3005/api/is-under-treatment/**"}'
+curl -v -X POST http://localhost:8080/api/routes -u system:System123 -H "Content-Type: application/json" -d "{\"name\":\"Is under treatment\",\"code\":\"is-under-treatment\",\"disabled\":false,\"url\":\"http://172.25.22.59:3005/api/is-under-treatment/**\"}"
 ```
