@@ -37,12 +37,22 @@ export default function Home() {
               <ExternalLinkIcon className="w-4 h-4" />
             </div>
           </Link> */}
-          <Link
+          {/* <Link
             href="https://dev.im.dhis2.org/tracker-plugins"
             target="_blank"
             className={`${baseButtonStyles} ${secondaryButtonStyles}`}>
             <div className="flex items-center gap-2">
               <p>Demo instance</p>
+              <ExternalLinkIcon className="w-4 h-4" />
+            </div>
+          </Link> */}
+          <Link
+            href="https://github.com/eirikhaugstulen/jordan-node-server-middleware"
+            target="_blank"
+            className={`${baseButtonStyles} ${secondaryButtonStyles}`}
+          >
+            <div className="flex items-center gap-2">
+              <p>Node middleware repository</p>
               <ExternalLinkIcon className="w-4 h-4" />
             </div>
           </Link>

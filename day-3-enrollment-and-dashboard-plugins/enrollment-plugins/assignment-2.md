@@ -16,13 +16,17 @@ Fetch and display the attributes of the current tracked entity. List out all att
 You can use the `useApiDataQuery` hook to fetch data from the API.
 
 ```tsx
-const { data, isLoading, error } = useApiDataQuery({
-    queryKey: ['trackedEntity', teiId],
-    query: {
-        resource: 'tracker/trackedEntities',
-        id: teiId,
-    }
-});
+export const PluginContent = ({ teiId }) => {
+    const { data, isLoading, error } = useApiDataQuery({
+        queryKey: ['trackedEntity', teiId],
+        query: {
+            resource: 'tracker/trackedEntities',
+            id: teiId,
+        }
+    });
+
+    // rest of the code...
+}
 ```
 
 The `queryKey` is an array of strings that uniquely identifies the query. This is used to cache the data and avoid duplicate requests, but it is not used in this assignment.
@@ -48,6 +52,8 @@ return (
 You can use the `isLoading` state to show a loading indicator. I have added a LoadingSpinner component to the template that you can use.
 
 ```tsx
+import { LoadingSpinner } from "../LoadingSpinner";
+
 if (isLoading) {
     return <LoadingSpinner />;
 }

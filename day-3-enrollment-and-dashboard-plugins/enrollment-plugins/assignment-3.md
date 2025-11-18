@@ -25,3 +25,5 @@ import {
     DataTableColumnHeader,
 } from "@dhis2/ui";
 ```
+
+ctrl + shift + p -> Toggle auto save

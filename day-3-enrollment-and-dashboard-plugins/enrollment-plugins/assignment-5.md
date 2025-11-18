@@ -20,4 +20,3 @@ Add a disableButton configuration option to the data store and make the plugin a
 The data store is a way to store fully flexible data in a DHIS2 instance. 
 
 It is basically your very own database that you can use for data, metadata or configuration objects.
-
