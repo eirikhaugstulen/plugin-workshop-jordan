@@ -88,20 +88,29 @@ export default function Home() {
           <Link
             href="/civil-registry"
             className={`${baseButtonStyles} ${secondaryButtonStyles}`}
-            >
+          >
             <div className="flex items-center gap-2">
               <p>Demo of the civil registry</p>
             </div>
           </Link>
+          <a
+            href="https://hzltgqabooemwjvfowfg.supabase.co/storage/v1/object/public/capture/route-manager-100.4.2.zip"
+            download="route-manager-100.4.2.zip"
+            className={`${baseButtonStyles} ${secondaryButtonStyles}`}
+          >
+            <div className="flex items-center gap-2">
+              <p>Download route manager app</p>
+            </div>
+          </a>
           <div className="mt-8 flex justify-end">
-          <Image
-            src="/uio-logo.png"
-            alt="UiO HISP Centre logo"
-            width={220}
-            height={80}
-            className="h-auto w-auto max-w-full"
-          />
-        </div>
+            <Image
+              src="/uio-logo.png"
+              alt="UiO HISP Centre logo"
+              width={220}
+              height={80}
+              className="h-auto w-auto max-w-full"
+            />
+          </div>
         </div>
       </main>
     </div>
