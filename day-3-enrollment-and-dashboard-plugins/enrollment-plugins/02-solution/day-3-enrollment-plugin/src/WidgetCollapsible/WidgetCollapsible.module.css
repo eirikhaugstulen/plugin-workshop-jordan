@@ -1,0 +1,95 @@
+.headerContainer {
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #dde0e4;
+    border-width: 1px;
+}
+
+.headerContainer.childrenVisible {
+    border-bottom-width: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.headerContainer.borderless {
+    border: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #424b59;
+}
+
+.children {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-style: solid;
+    border-color: #dde0e4;
+    border-width: 1px;
+    border-top-width: 0;
+}
+
+.children.open {
+    animation: slidein 200ms normal forwards ease-in-out;
+    transform-origin: 50% 0%;
+}
+
+.children.close {
+    animation: slideout 200ms normal forwards ease-in-out;
+    transform-origin: 100% 0%;
+}
+
+.children.borderless {
+    border: none;
+}
+
+.toggleButton {
+    margin: 0 0 0 4px;
+    height: 24px;
+    border-radius: 3px;
+    color: var(--colors-grey600);
+}
+
+.toggleButton:hover {
+    background: var(--colors-grey200);
+    color: var(--colors-grey800);
+}
+
+.toggleButton.open {
+    animation: flipOpen 200ms normal forwards linear;
+}
+
+.toggleButton.close {
+    animation: flipClose 200ms normal forwards linear;
+}
+
+.toggleButton.closeinit {
+    transform: rotateX(180deg);
+}
+
+@keyframes slidein {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+@keyframes slideout {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0); }
+}
+
+@keyframes flipOpen {
+    from { transform: rotateX(180deg); }
+    to { transform: rotateX(0); }
+}
+
+@keyframes flipClose {
+    from { transform: rotateX(0); }
+    to { transform: rotateX(180deg); }
+} 

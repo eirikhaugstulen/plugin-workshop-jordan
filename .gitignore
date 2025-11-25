@@ -2,9 +2,11 @@
 .idea
 .vscode
 *.local
-build
+**/build/
 node_modules
 **.sql
 _internal_notes.md
 **/locales/**
 .d2
+pnpm-lock.yaml
+package-lock.json

@@ -1,0 +1,27 @@
+.button {
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: center;
+    color: var(--colors-grey700);
+}
+
+.button:hover {
+    background: var(--colors-grey200);
+    color: var(--colors-grey800);
+}
+
+.button:focus {
+    outline: solid;
+    background: var(--colors-grey200);
+    color: var(--colors-grey800);
+}
+
+.button.disabled {
+    color: var(--colors-grey500);
+    cursor: not-allowed;
+} 

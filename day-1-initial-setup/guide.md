@@ -8,11 +8,11 @@ git clone https://github.com/eirikhaugstulen/plugin-workshop-jordan.git
 
 ### Configure DHIS2 with docker
 
-All necessary files are located in the docker-setup directory. You can find the following files:
+All necessary files are located in the repository. You can find the following files:
 
-- docker-compose.yml
-- dhis.conf
-- A database dump (Optional)
+- `docker-compose.yml` (in the root directory)
+- `day-1-initial-setup/dhis.conf`
+- `day-1-initial-setup/db/init.sql` - A database dump (Optional)
 
 To run the DHIS2 instance, you can use the following command:
 
@@ -46,25 +46,52 @@ If you want to replace the default database with a dump, you can replace the db/
 
 If you do not have docker installed, you can get it from [here](https://www.docker.com/products/docker-desktop)
 
+## Seeding the database
 
-
+If you want to seed the database with a dump, you can replace the db/init.sql file with your own dump.
+I have included a zip file with a dump of the database. You can unzip it and place the init.sql file in the db directory.
+The docker compose file handle the rest.
 
 ## Creating a custom app
 
-1. Try running `npm --version` to check if you have npm installed.
-2. If not, run the following commands: 
+### Installing Node.js
 
-# Download and install Chocolatey:
+1. Try running `npm --version` to check if you have npm installed.
+2. If not, install Node.js using one of the methods below:
+
+#### macOS / Linux
+
+Download and install from [nodejs.org](https://nodejs.org/) or use a version manager like nvm:
+
+```bash
+# Using nvm (recommended)
+nvm install 20
+nvm use 20
+
+# Verify installation
+node -v  # Should print v22.x.x
+npm -v   # Should print 10.x.x
+```
+
+#### Windows
+
+Option 1: Download the installer from [nodejs.org](https://nodejs.org/)
+
+Option 2: Use Chocolatey:
+
+```powershell
+# Download and install Chocolatey (run as Administrator):
 powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
 
 # Download and install Node.js:
-choco install nodejs --version="22.21.1"
+choco install nodejs --version="22.12.0"
 
 # Verify the Node.js version:
-node -v # Should print "v22.21.1".
+node -v  # Should print v22.x.x
+npm -v   # Should print 10.x.x
+```
 
-# Verify npm version:
-npm -v # Should print "10.9.4".
+### Creating the app
 
 3. Run `npm create @dhis2/app` to create a new app
 

@@ -4,7 +4,7 @@
 After finishing this assignment, you should be able to see the plugin with both the admin user and a restricted test user.
 
 
-1. Checkout the updated version of the enrollment plugin template and download/clone it onto your local computer.
+1. Open the day-4-enrollment-plugin folder
 2. Run `npm install` to install the dependencies.
 3. Run `npm start` to start the plugin
 4. Add the plugin to the WHO RMNCH Program through the Tracker plugin configurator app.

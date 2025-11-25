@@ -1,4 +1,4 @@
-# Assingment 3
+# Assignment 3
 
 ## Objective
 

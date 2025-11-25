@@ -5,19 +5,13 @@ Connect your plugin with your server middleware by using a DHIS2 route.
 
 ## Steps
 
-1. Clone the express server middleware repository and follow the instructions in the README.md file to get it running.
-2. Use the script guide below to create a new DHIS2 route
-   1. Replace the localhost with your local machine's IP address
-3. Open up the capture app and test if the plugin can reach the server middleware.
-
-
-# How to create a new DHIS2 route
-
-```bash
-ipconfig | findstr /i "IPv4"
-```
-
-Then run the following command in your terminal:
-```bash
-curl -v -X POST http://localhost:8080/api/routes -u system:System123 -H "Content-Type: application/json" -d "{\"name\":\"Is under treatment\",\"code\":\"is-under-treatment\",\"disabled\":false,\"url\":\"http://172.25.22.59:3005/api/is-under-treatment/**\"}"
-```
+1. Open the day-4-node-middleware folder
+2. Run `npm install` to install the dependencies.
+3. Run `npm start` to start the server middleware.
+4. Add a new route to your DHIS2 instance by using the routes manager app.
+   1. Call it "is-under-treatment"
+   2. Set the URL to `http://{your-local-ip-address}:3005/api/is-under-treatment/**`
+   3. Set the method to GET
+   4. Do not add any authentication or headers yet.
+5. Open up the capture app and test if the plugin can reach the server middleware.
+6. It should return a `{ "isUnderTreatment": true }` response.

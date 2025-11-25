@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Civil Registry Middleware (Next.js)
+
+This is an example middleware implementation using Next.js that simulates a civil registry API. It's used in the workshop to demonstrate how plugins can fetch data from external sources through a secure middleware layer.
+
+## Purpose
+
+This middleware serves as a mock civil registry API that:
+- Returns person data based on a unique ID
+- Falls back to generating random data for unknown IDs (using randomuser.me)
+- Demonstrates how to build API routes in Next.js
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js v20+
+- pnpm (recommended) or npm
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the Development Server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The server will start at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+### GET `/api/civil-registry`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Returns all entries in the mock registry.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Response:**
+```json
+{
+  "message": "Civil registry data fetched successfully",
+  "data": [...]
+}
+```
 
-## Deploy on Vercel
+### GET `/api/civil-registry/[id]`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Returns data for a specific person by ID.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Parameters:**
+- `id` - The unique identifier for the person
+
+**Response (known ID):**
+```json
+{
+  "message": "Civil registry data fetched from internal source successfully",
+  "data": {
+    "uniqueId": "test",
+    "firstName": "John",
+    "lastName": "Doe",
+    "birthDate": "1990-01-15"
+  }
+}
+```
+
+**Response (unknown ID - generated from external source):**
+```json
+{
+  "message": "Civil registry data fetched from external source successfully",
+  "data": {
+    "uniqueId": "abc123",
+    "firstName": "Generated",
+    "lastName": "Name",
+    "birthDate": "1985-06-20"
+  }
+}
+```
+
+## Workshop Usage
+
+This middleware is referenced in:
+- **Day 2 Assignment 4**: Fetching data from external sources
+- **Day 5 Civil Registry Integration**: Building a complete form field plugin
+
+### Deployed Version
+
+A deployed version is available at:
+```
+https://www.jordan-workshop.dev/api/civil-registry/[id]
+```
+
+## Project Structure
+
+```
+├── app/
+│   ├── api/
+│   │   └── civil-registry/
+│   │       ├── route.ts          # GET all entries
+│   │       └── [id]/
+│   │           ├── route.ts      # GET by ID
+│   │           └── registry.ts   # Mock data store
+│   ├── civil-registry/
+│   │   └── page.tsx              # Demo page
+│   └── page.tsx                  # Landing page
+└── ...
+```
+
+## Extending the Registry
+
+To add more mock entries, edit the `registry.ts` file:
+
+```typescript
+export const registry: Record<string, Registry> = {
+    "test": {
+        uniqueId: "test",
+        firstName: "John",
+        lastName: "Doe",
+        birthDate: "1990-01-15",
+    },
+    // Add more entries here
+};
+```
